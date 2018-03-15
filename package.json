@@ -1,0 +1,124 @@
+{
+  "name": "vscode-open-in-github",
+  "displayName": "Open in GitHub",
+  "description": "Open the current project or file in github.com.",
+  "icon": "resources/logo-128x128.png",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "out/src/extension.js",
+  "publisher": "fabiospampinato",
+  "activationEvents": [
+    "onCommand:openInGitHub.openProject",
+    "onCommand:openInGitHub.openFile",
+    "onCommand:openInGitHub.openFileBlame",
+    "onCommand:openInGitHub.openFileHistory",
+    "onCommand:openInGitHub.openIssues",
+    "onCommand:openInGitHub.openPullRequests"
+  ],
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Open in GitHub - Configuration",
+      "properties": {
+        "openInGitHub.github.domain": {
+          "type": "string",
+          "description": "Custom GitHub domain",
+          "default": "github.com"
+        },
+        "openInGitHub.remote.name": {
+          "type": "string",
+          "description": "Name of the remote repository",
+          "default": "origin"
+        },
+        "openInGitHub.remote.branch": {
+          "type": "string",
+          "description": "Name of the remote branch",
+          "default": "master"
+        },
+        "openInGitHub.useLocalBranch": {
+          "type": "boolean",
+          "description": "Use the local branch instead of the fixed remote branch",
+          "default": true
+        },
+        "openInGitHub.useLocalRange": {
+          "type": "boolean",
+          "description": "Highlight the local selection range when possible",
+          "default": true
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "openInGitHub.openProject",
+        "title": "Open in GitHub: Project"
+      },
+      {
+        "command": "openInGitHub.openFile",
+        "title": "Open in GitHub: File"
+      },
+      {
+        "command": "openInGitHub.openFileHistory",
+        "title": "Open in GitHub: File History"
+      },
+      {
+        "command": "openInGitHub.openFileBlame",
+        "title": "Open in GitHub: File Blame"
+      },
+      {
+        "command": "openInGitHub.openIssues",
+        "title": "Open in GitHub: Issues"
+      },
+      {
+        "command": "openInGitHub.openPullRequests",
+        "title": "Open in GitHub: Pull Requests"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "publish": "vsce publish && npm publish",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "bugs": {
+    "url": "https://github.com/fabiospampinato/vscode-open-in-github/issues"
+  },
+  "author": {
+    "name": "Fabio Spampinato",
+    "email": "spampinabio@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fabiospampinato/vscode-open-in-github.git"
+  },
+  "engines": {
+    "vscode": "^1.15.0"
+  },
+  "keywords": [
+    "vscode",
+    "extension",
+    "open",
+    "in",
+    "github"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "dependencies": {
+    "absolute": "0.0.1",
+    "find-up": "^2.1.0",
+    "json5": "^0.5.1",
+    "lodash": "^4.17.4",
+    "mkdirp": "^0.5.1",
+    "open": "0.0.5",
+    "pify": "^3.0.0",
+    "simple-git": "^1.92.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.40",
+    "tslint": "^4.4.2",
+    "typescript": "~2.2.0",
+    "vscode": "^1.1.4"
+  }
+}
