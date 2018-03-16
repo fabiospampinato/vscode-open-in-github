@@ -1,4 +1,4 @@
-# VSC Open in GitHub
+# Open in GitHub
 
 <p align="center">
 	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-github/master/resources/logo-128x128.png" alt="Logo">
@@ -10,10 +10,10 @@ There are many other extensions for doing this, but they either don't work well 
 
 ## Install
 
-Run the following in the command palette:
+Follow the instructions in the [Marketplace](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-open-in-github), or run the following in the command palette:
 
 ```shell
-ext install vscode-open-in-github
+ext install fabiospampinato.vscode-open-in-github
 ```
 
 ## Usage
