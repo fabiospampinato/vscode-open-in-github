@@ -3,7 +3,7 @@
   "displayName": "Open in GitHub",
   "description": "Open the current project or file in github.com.",
   "icon": "resources/logo-128x128.png",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "MIT",
   "main": "out/src/extension.js",
   "publisher": "fabiospampinato",
