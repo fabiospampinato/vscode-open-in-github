@@ -84,7 +84,11 @@ async function open ( file = false, page? ) {
 
           const selection = selections[0];
 
-          lines = `#L${selection.start.line + 1}-L${selection.end.line + 1}`;
+          if ( !selection.isEmpty ) {
+
+            lines = `#L${selection.start.line + 1}-L${selection.end.line + 1}`;
+
+          }
 
         }
 
