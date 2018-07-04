@@ -1,3 +1,6 @@
+### Version 1.1.0
+- Added an `useLocalLine` setting
+
 ### Version 1.0.2
 - Selecting lines only if the current selection is not empty
 
