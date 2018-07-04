@@ -42,7 +42,12 @@
         },
         "openInGitHub.useLocalRange": {
           "type": "boolean",
-          "description": "Highlight the local selection range when possible",
+          "description": "Highlight the local selection range, if there's one",
+          "default": true
+        },
+        "openInGitHub.useLocalLine": {
+          "type": "boolean",
+          "description": "Highlight the local line if there's no selection range",
           "default": true
         }
       }

@@ -88,6 +88,10 @@ async function open ( file = false, page? ) {
 
             lines = `#L${selection.start.line + 1}-L${selection.end.line + 1}`;
 
+          } else if ( config.useLocalLine ) {
+
+            lines = `#L${selection.start.line + 1}`;
+
           }
 
         }
