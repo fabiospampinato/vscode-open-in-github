@@ -1,3 +1,6 @@
+### Version 1.1.1
+- Bundling with webpack
+
 ### Version 1.1.0
 - Added an `useLocalLine` setting
 
