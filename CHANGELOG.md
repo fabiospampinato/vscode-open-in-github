@@ -1,3 +1,6 @@
+### Version 1.1.3
+- Readme: using hi-res logo
+
 ### Version 1.1.2
 - Outputting modern code (es2017, faster)
 - Using "Debug Launcher" for debugging
