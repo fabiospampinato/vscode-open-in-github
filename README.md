@@ -1,7 +1,7 @@
 # Open in GitHub
 
 <p align="center">
-	<img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-github/master/resources/logo.png" width="128" alt="Logo">
+  <img src="https://raw.githubusercontent.com/fabiospampinato/vscode-open-in-github/master/resources/logo.png" width="128" alt="Logo">
 </p>
 
 Open the current project or file in github.com.
