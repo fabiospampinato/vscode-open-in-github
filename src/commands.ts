@@ -86,7 +86,15 @@ async function open ( file = false, page? ) {
 
           if ( !selection.isEmpty ) {
 
-            lines = `#L${selection.start.line + 1}-L${selection.end.line + 1}`;
+            if ( selection.start.line === selection.end.line ) {
+
+              lines = `#L${selection.start.line + 1}`;
+
+            } else {
+
+              lines = `#L${selection.start.line + 1}-L${selection.end.line + 1}`;
+
+            }
 
           } else if ( config.useLocalLine ) {
 
