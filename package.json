@@ -48,7 +48,7 @@
         "openInGitHub.useLocalLine": {
           "type": "boolean",
           "description": "Highlight the local line if there's no selection range",
-          "default": true
+          "default": false
         }
       }
     },

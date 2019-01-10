@@ -38,7 +38,7 @@ It adds 6 commands to the command palette:
   "openInGitHub.remote.branch": "master", // Name of the remote branch
   "openInGitHub.useLocalBranch": true, // Use the local branch instead of the fixed remote branch
   "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
-  "openInGitHub.useLocalLine": true // Highlight the local line if there's no selection range
+  "openInGitHub.useLocalLine": false // Highlight the local line if there's no selection range
 }
 ```
 
