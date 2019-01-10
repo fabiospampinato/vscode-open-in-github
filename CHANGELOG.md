@@ -1,3 +1,8 @@
+### Version 1.1.4
+- Setting `useLocalLine` to `false` by default
+- Simplified range URL when the selected range encompasses only one line
+- Properly escaping urls
+
 ### Version 1.1.3
 - Readme: using hi-res logo
 
