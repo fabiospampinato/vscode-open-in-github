@@ -60,7 +60,9 @@ async function open ( file = false, page? ) {
 
   const config = Config.get ();
 
-  let filePath, branch, lines;
+  let filePath = '',
+      branch = '',
+      lines = '';
 
   if ( file ) {
 
