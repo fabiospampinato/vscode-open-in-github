@@ -1,3 +1,6 @@
+### Version 1.1.5
+- Fixed a regression
+
 ### Version 1.1.4
 - Setting `useLocalLine` to `false` by default
 - Simplified range URL when the selected range encompasses only one line
