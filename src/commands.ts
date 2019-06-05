@@ -8,6 +8,7 @@ import * as pify from 'pify';
 import * as vscode from 'vscode';
 import Config from './config';
 import Utils from './utils';
+import { pathToFileURL } from 'url';
 
 /* COMMANDS */
 
@@ -72,7 +73,7 @@ async function open ( file = false, page? ) {
 
     const editorPath = activeTextEditor.document.uri.fsPath;
 
-    filePath = editorPath ? editorPath.substring ( repopath.length + 1 ) : undefined;
+    filePath = editorPath ? editorPath.substring ( repopath.length + 1 ).replace( /\\/g, '/' ) : undefined;
 
     if ( filePath ) {
 
