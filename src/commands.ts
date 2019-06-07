@@ -72,7 +72,7 @@ async function open ( file = false, page? ) {
 
     const editorPath = activeTextEditor.document.uri.fsPath;
 
-    filePath = editorPath ? editorPath.substring ( repopath.length + 1 ) : undefined;
+    filePath = editorPath ? editorPath.substring ( repopath.length + 1 ).replace( /\\/g, '/' ) : undefined;
 
     if ( filePath ) {
 

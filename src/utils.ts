@@ -60,12 +60,7 @@ const Utils = {
 
         const wrapperPath = path.dirname ( foundPath );
 
-        if ( wrapperPath.startsWith ( rootPath ) ) {
-
-          return wrapperPath;
-
-        }
-
+        return wrapperPath;
       }
 
     }
