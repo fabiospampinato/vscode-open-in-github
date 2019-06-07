@@ -13,7 +13,8 @@
     "onCommand:openInGitHub.openFileBlame",
     "onCommand:openInGitHub.openFileHistory",
     "onCommand:openInGitHub.openIssues",
-    "onCommand:openInGitHub.openPullRequests"
+    "onCommand:openInGitHub.openPullRequests",
+    "onCommand:openInGitHub.openReleases"
   ],
   "contributes": {
     "configuration": {
@@ -76,6 +77,10 @@
       {
         "command": "openInGitHub.openPullRequests",
         "title": "Open in GitHub: Pull Requests"
+      },
+      {
+        "command": "openInGitHub.openReleases",
+        "title": "Open in GitHub: Releases"
       }
     ]
   },

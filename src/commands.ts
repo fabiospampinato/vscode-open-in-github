@@ -2,9 +2,7 @@
 /* IMPORT */
 
 import * as _ from 'lodash';
-import * as simpleGit from 'simple-git';
 import * as openPath from 'open';
-import * as pify from 'pify';
 import * as vscode from 'vscode';
 import Config from './config';
 import Utils from './utils';
@@ -26,6 +24,12 @@ function openIssues () {
 function openPullRequests () {
 
   return open ( false, 'pulls' );
+
+}
+
+function openReleases () {
+
+  return open ( false, 'releases' );
 
 }
 
@@ -120,4 +124,4 @@ async function open ( file = false, page? ) {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openFile, openFileHistory, openFileBlame, open};
+export {openProject, openIssues, openPullRequests, openReleases, openFile, openFileHistory, openFileBlame, open};
