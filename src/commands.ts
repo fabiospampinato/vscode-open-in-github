@@ -60,7 +60,7 @@ async function open ( file = false, page? ) {
   const git = Utils.repo.getGit ( repopath ),
         repourl = await Utils.repo.getUrl ( git );
 
-  if ( !repopath ) return vscode.window.showErrorMessage ( 'Remote repository not found' );
+  if ( !repourl ) return vscode.window.showErrorMessage ( 'Remote repository not found' );
 
   const config = Config.get ();
 
