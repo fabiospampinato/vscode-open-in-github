@@ -91,7 +91,7 @@ const Utils = {
 
       const config = Config.get ();
 
-      if ( config.useLocalBranch ) return config.remote.branch;
+      if ( !config.useLocalBranch ) return config.remote.branch;
 
       const branches = await git.branch ();
 
