@@ -1,3 +1,6 @@
+### Version 1.2.1
+- Fixed a couple of bugs
+
 ### Version 1.2.0
 - Improved support for monorepos -- Fixed usage under Windows
 - Added an “Open in GitHub: Releases” command
