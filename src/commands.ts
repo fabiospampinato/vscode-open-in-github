@@ -116,7 +116,10 @@ async function open ( file = false, page? ) {
 
   }
 
-  const url = _.compact ([ repourl, page, encodeURIComponent ( branch ), encodeURIComponent ( filePath ), lines ]).join ( '/' );
+  branch = encodeURIComponent ( branch );
+  filePath = encodeURIComponent ( filePath ).replace ( /%2F/g, '/' );
+
+  const url = _.compact ([ repourl, page, branch, filePath, lines ]).join ( '/' );
 
   openPath ( url );
 
