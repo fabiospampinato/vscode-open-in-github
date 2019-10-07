@@ -1,3 +1,6 @@
+### Version 1.2.2
+- Url: avoiding url encoding forward slashes
+
 ### Version 1.2.1
 - Fixed a couple of bugs
 
