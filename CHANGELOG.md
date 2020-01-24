@@ -1,3 +1,6 @@
+### Version 1.2.3
+- Fixed remote support
+
 ### Version 1.2.2
 - Url: avoiding url encoding forward slashes
 
