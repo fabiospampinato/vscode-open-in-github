@@ -2,7 +2,6 @@
 /* IMPORT */
 
 import * as _ from 'lodash';
-import * as openPath from 'open';
 import * as vscode from 'vscode';
 import Config from './config';
 import Utils from './utils';
@@ -121,7 +120,7 @@ async function open ( file = false, page? ) {
 
   const url = _.compact ([ repourl, page, branch, filePath, lines ]).join ( '/' );
 
-  openPath ( url );
+  vscode.env.openExternal ( vscode.Uri.parse ( url ) );
 
 }
 
