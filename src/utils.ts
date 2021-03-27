@@ -12,6 +12,10 @@ import * as Commands from './commands';
 import Config from './config';
 
 /* UTILS */
+// Also set in package.json
+const DEFAULT_GIT_HOST = 'github.com';
+const DEFAULT_REMOTE_NAME = 'origin';
+const DEFAULT_REMOTE_BRANCH = 'master';
 
 const Utils = {
 
@@ -88,10 +92,9 @@ const Utils = {
     },
 
     async getBranch ( git ) {
-
       const config = Config.get ();
 
-      if ( !config.useLocalBranch ) return config.remote.branch;
+      if ( !config.useLocalBranch ) return (config.remote.branch || DEFAULT_REMOTE_BRANCH);
 
       const branches = await git.branch ();
 
@@ -100,11 +103,12 @@ const Utils = {
     },
 
     async getUrl ( git ) {
-
-      const config = Config.get (),
+      const config = Config.get(),
+            gitDomain = config.github.domain || DEFAULT_GIT_HOST,
+            remoteName = config.remote.name || DEFAULT_REMOTE_NAME,
             remotes = await git.getRemotes ( true ),
-            remotesGithub = remotes.filter ( remote => ( remote.refs.fetch || remote.refs.push ).includes ( 'github.com' ) ),
-            remoteOrigin = remotesGithub.filter ( remote => remote.name === config.remote.name )[0],
+            remotesGithub = remotes.filter ( remote => ( remote.refs.fetch || remote.refs.push ).includes (gitDomain) ),
+            remoteOrigin = remotesGithub.filter ( remote => remote.name === remoteName )[0],
             remote = remoteOrigin || remotesGithub[0];
 
       if ( !remote ) return;
@@ -115,7 +119,7 @@ const Utils = {
 
       if ( !match ) return;
 
-      return `https://${config.github.domain}/${match[1]}/${match[2]}`;
+      return `https://${gitDomain}/${match[1]}/${match[2]}`;
 
     }
 
