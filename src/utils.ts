@@ -103,7 +103,7 @@ const Utils = {
 
       const config = Config.get (),
             remotes = await git.getRemotes ( true ),
-            remotesGithub = remotes.filter ( remote => ( remote.refs.fetch || remote.refs.push ).includes ( 'github.com' ) ),
+            remotesGithub = remotes.filter ( remote => ( remote.refs.fetch || remote.refs.push ).includes ( config.github.domain ) ),
             remoteOrigin = remotesGithub.filter ( remote => remote.name === config.remote.name )[0],
             remote = remoteOrigin || remotesGithub[0];
 
