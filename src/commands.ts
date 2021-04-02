@@ -32,6 +32,12 @@ function openActions () {
 
 }
 
+function openProjects () {
+
+  return open ( false, 'projects' );
+
+}
+
 function openReleases () {
 
   return open ( false, 'releases' );
@@ -132,4 +138,4 @@ async function open ( file = false, page? ) {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openReleases, openFile, openFileHistory, openFileBlame, open};
+export {openProject, openIssues, openPullRequests, openActions, openProjects, openReleases, openFile, openFileHistory, openFileBlame, open};

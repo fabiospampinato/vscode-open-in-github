@@ -15,7 +15,8 @@
     "onCommand:openInGitHub.openIssues",
     "onCommand:openInGitHub.openPullRequests",
     "onCommand:openInGitHub.openReleases",
-    "onCommand:openInGitHub.openActions"
+    "onCommand:openInGitHub.openActions",
+    "onCommand:openInGitHub.openProjects"
   ],
   "contributes": {
     "configuration": {
@@ -86,6 +87,10 @@
       {
         "command": "openInGitHub.openActions",
         "title": "Open in GitHub: Actions"
+      },
+      {
+        "command": "openInGitHub.openProjects",
+        "title": "Open in GitHub: Projects"
       }
     ]
   },
