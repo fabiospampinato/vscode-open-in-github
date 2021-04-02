@@ -26,6 +26,12 @@ function openPullRequests () {
 
 }
 
+function openActions () {
+
+  return open ( false, 'actions' );
+
+}
+
 function openReleases () {
 
   return open ( false, 'releases' );
@@ -126,4 +132,4 @@ async function open ( file = false, page? ) {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openReleases, openFile, openFileHistory, openFileBlame, open};
+export {openProject, openIssues, openPullRequests, openActions, openReleases, openFile, openFileHistory, openFileBlame, open};
