@@ -19,7 +19,8 @@
     "onCommand:openInGitHub.openActions",
     "onCommand:openInGitHub.openProjects",
     "onCommand:openInGitHub.openWiki",
-    "onCommand:openInGitHub.openSettings"
+    "onCommand:openInGitHub.openSettings",
+    "onCommand:openInGitHub.copyFilePermalink"
   ],
   "contributes": {
     "configuration": {
@@ -106,6 +107,10 @@
       {
         "command": "openInGitHub.openSettings",
         "title": "Open in GitHub: Settings"
+      },
+      {
+        "command": "openInGitHub.copyFilePermalink",
+        "title": "Open in GitHub: Copy File Permalink"
       }
     ]
   },

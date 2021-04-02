@@ -92,6 +92,16 @@ const URL = {
 
   },
 
+  async copy ( file = false, permalink = false, page? ) {
+
+    const url = await URL.get ( file, permalink, page );
+
+    await vscode.env.clipboard.writeText ( url );
+
+    vscode.window.showInformationMessage ( 'Permalink copied to clipboard!' );
+
+  },
+
   async open ( file = false, permalink = false, page? ) {
 
     const url = await URL.get ( file, permalink, page );

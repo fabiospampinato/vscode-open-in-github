@@ -77,6 +77,12 @@ function openFilePermalink () {
 
 }
 
+function copyFilePermalink () {
+
+  return URL.copy ( true, true, 'blob' );
+
+}
+
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openProjects, openWiki, openSettings, openReleases, openFile, openFileHistory, openFileBlame, openFilePermalink, open};
+export {openProject, openIssues, openPullRequests, openActions, openProjects, openWiki, openSettings, openReleases, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFilePermalink};
