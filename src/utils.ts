@@ -75,6 +75,12 @@ const Utils = {
 
     },
 
+    async getHash ( git ) {
+
+      return ( await git.revparse ([ 'HEAD' ]) ).trim ();
+
+    },
+
     async getPath () {
 
       const {activeTextEditor} = vscode.window,

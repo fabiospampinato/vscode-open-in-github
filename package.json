@@ -12,6 +12,7 @@
     "onCommand:openInGitHub.openFile",
     "onCommand:openInGitHub.openFileBlame",
     "onCommand:openInGitHub.openFileHistory",
+    "onCommand:openInGitHub.openFilePermalink",
     "onCommand:openInGitHub.openIssues",
     "onCommand:openInGitHub.openPullRequests",
     "onCommand:openInGitHub.openReleases",
@@ -73,6 +74,10 @@
       {
         "command": "openInGitHub.openFileBlame",
         "title": "Open in GitHub: File Blame"
+      },
+      {
+        "command": "openInGitHub.openFilePermalink",
+        "title": "Open in GitHub: File Permalink"
       },
       {
         "command": "openInGitHub.openIssues",
@@ -144,7 +149,7 @@
     "lodash": "^4.17.4",
     "mkdirp": "^0.5.1",
     "pify": "^3.0.0",
-    "simple-git": "^1.92.0"
+    "simple-git": "^2.37.0"
   },
   "devDependencies": {
     "ts-loader": "^5.2.1",
