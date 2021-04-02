@@ -38,6 +38,12 @@ function openProjects () {
 
 }
 
+function openWiki () {
+
+  return open ( false, 'wiki' );
+
+}
+
 function openReleases () {
 
   return open ( false, 'releases' );
@@ -138,4 +144,4 @@ async function open ( file = false, page? ) {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openProjects, openReleases, openFile, openFileHistory, openFileBlame, open};
+export {openProject, openIssues, openPullRequests, openActions, openProjects, openWiki, openReleases, openFile, openFileHistory, openFileBlame, open};
