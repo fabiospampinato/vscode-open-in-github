@@ -17,7 +17,8 @@
     "onCommand:openInGitHub.openReleases",
     "onCommand:openInGitHub.openActions",
     "onCommand:openInGitHub.openProjects",
-    "onCommand:openInGitHub.openWiki"
+    "onCommand:openInGitHub.openWiki",
+    "onCommand:openInGitHub.openSettings"
   ],
   "contributes": {
     "configuration": {
@@ -96,6 +97,10 @@
       {
         "command": "openInGitHub.openWiki",
         "title": "Open in GitHub: Wiki"
+      },
+      {
+        "command": "openInGitHub.openSettings",
+        "title": "Open in GitHub: Settings"
       }
     ]
   },
