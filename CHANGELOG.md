@@ -1,3 +1,11 @@
+### Version 1.3.0
+- New command: "Open in GitHub: Actions"
+- New command: "Open in GitHub: Projects"
+- New command: "Open in GitHub: Wiki"
+- New command: "Open in GitHub: Settings"
+- New command: "Open in GitHub: File Permalink"
+- New command: "Open in GitHub: Copy File Permalink"
+
 ### Version 1.2.4
 - Update .github/FUNDING.yml
 - Deleted repo-level github funding.yml
