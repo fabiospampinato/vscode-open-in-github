@@ -27,6 +27,15 @@
       "type": "object",
       "title": "Open in GitHub - Configuration",
       "properties": {
+        "openInGitHub.github.protocol": {
+          "type": "string",
+          "enum": [
+            "https",
+            "http"
+          ],
+          "description": "Select network protocol",
+          "default": "https"
+        },
         "openInGitHub.github.domain": {
           "type": "string",
           "description": "Custom GitHub domain",

@@ -121,7 +121,7 @@ const Utils = {
 
       if ( !match ) return;
 
-      return `https://${config.github.domain}/${match[1]}/${match[2]}`;
+      return `${config.github.protocol}://${config.github.domain}/${match[1]}/${match[2]}`;
 
     }
 
