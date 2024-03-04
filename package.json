@@ -86,6 +86,10 @@
         "title": "Open in GitHub: Projects"
       },
       {
+        "command": "openInGitHub.openSecurity",
+        "title": "Open in GitHub: Security"
+      },
+      {
         "command": "openInGitHub.openWiki",
         "title": "Open in GitHub: Wiki"
       },
