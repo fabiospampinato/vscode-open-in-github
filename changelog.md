@@ -1,3 +1,10 @@
+### Version 2.0.0
+- Rewitten: more modern code, no third-party dependencies, 99% smaller bundle
+- New command: "Open in GitHub: Security"
+- New command: "Open in GitHub: Insights"
+- New command: "Open in GitHub: Tags"
+- New command: "Open in GitHub: Copy File Link"
+
 ### Version 1.3.0
 - New command: "Open in GitHub: Actions"
 - New command: "Open in GitHub: Projects"
