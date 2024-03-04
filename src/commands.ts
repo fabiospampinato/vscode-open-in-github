@@ -5,8 +5,6 @@ import URL from './url';
 
 /* MAIN */
 
-//TODO: Add a "copyFile" command too
-
 const openProject = (): Promise<void> => {
 
   return URL.open ();
@@ -97,6 +95,12 @@ const openFilePermalink = (): Promise<void> => {
 
 };
 
+const copyFileLink = (): Promise<void> => {
+
+  return URL.copy ( true, false, 'blob' );
+
+};
+
 const copyFilePermalink = (): Promise<void> => {
 
   return URL.copy ( true, true, 'blob' );
@@ -105,4 +109,4 @@ const copyFilePermalink = (): Promise<void> => {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFilePermalink};
+export {openProject, openIssues, openPullRequests, openActions, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFileLink, copyFilePermalink};

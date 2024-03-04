@@ -106,6 +106,10 @@
         "title": "Open in GitHub: Settings"
       },
       {
+        "command": "openInGitHub.copyFileLink",
+        "title": "Open in GitHub: Copy File Link"
+      },
+      {
         "command": "openInGitHub.copyFilePermalink",
         "title": "Open in GitHub: Copy File Permalink"
       }
