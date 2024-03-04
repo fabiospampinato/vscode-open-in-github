@@ -6,7 +6,7 @@
 
 Open the current project or file in github.com.
 
-There are many other extensions for doing this, but they either don't work well for me or they provide too few/many functionalities.
+There are many other extensions for doing this, but they either didn't work well for me or they provided too few/many functionalities.
 
 ## Install
 
@@ -52,17 +52,11 @@ It adds 12 commands to the command palette:
 
 ### Opening the project
 
-![Project](resources/demo/project.gif)
+![Project](resources/demo-project.gif)
 
 ### Opening the file
 
-![File](resources/demo/file.gif)
-
-## Contributing
-
-If you found a problem, or have a feature request, please open an [issue](https://github.com/fabiospampinato/vscode-open-in-github/issues) about it.
-
-If you want to make a pull request you can debug the extension using [Debug Launcher](https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-debug-launcher).
+![File](resources/demo-file.gif)
 
 ## License
 

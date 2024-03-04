@@ -3,85 +3,87 @@
 
 import URL from './url';
 
-/* COMMANDS */
+/* MAIN */
 
-function openProject () {
+//TODO: Add a "copyFile" command too
+
+const openProject = (): Promise<void> => {
 
   return URL.open ();
 
-}
+};
 
-function openIssues () {
+const openIssues = (): Promise<void> => {
 
   return URL.open ( false, false, 'issues' );
 
-}
+};
 
-function openPullRequests () {
+const openPullRequests = (): Promise<void> => {
 
   return URL.open ( false, false, 'pulls' );
 
-}
+};
 
-function openActions () {
+const openActions = (): Promise<void> => {
 
   return URL.open ( false, false, 'actions' );
 
-}
+};
 
-function openProjects () {
+const openProjects = (): Promise<void> => {
 
   return URL.open ( false, false, 'projects' );
 
-}
+};
 
-function openWiki () {
+const openWiki = (): Promise<void> => {
 
   return URL.open ( false, false, 'wiki' );
 
-}
+};
 
-function openSettings () {
+const openSettings = (): Promise<void> => {
 
   return URL.open ( false, false, 'settings' );
 
-}
+};
 
-function openReleases () {
+const openReleases = (): Promise<void> => {
 
   return URL.open ( false, false, 'releases' );
 
-}
+};
 
-function openFile () {
+const openFile = (): Promise<void> => {
 
   return URL.open ( true, false, 'blob' );
 
-}
+};
 
-function openFileHistory () {
+const openFileHistory = (): Promise<void> => {
 
   return URL.open ( true, false, 'commits' );
 
-}
+};
 
-function openFileBlame () {
+const openFileBlame = (): Promise<void> => {
 
   return URL.open ( true, false, 'blame' );
 
-}
+};
 
-function openFilePermalink () {
+const openFilePermalink = (): Promise<void> => {
 
   return URL.open ( true, true, 'blob' );
 
-}
+};
 
-function copyFilePermalink () {
+const copyFilePermalink = (): Promise<void> => {
 
   return URL.copy ( true, true, 'blob' );
 
-}
+};
 
 /* EXPORT */
 

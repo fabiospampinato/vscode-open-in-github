@@ -1,15 +1,6 @@
 {
+  "extends": "tsex/tsconfig.json",
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es2017",
-    "outDir": "out",
-    "lib": ["es2015", "es2016", "es2017"],
-    "sourceMap": true,
-    "skipLibCheck": true,
-    "rootDir": "."
-  },
-  "exclude": [
-    "node_modules",
-    ".vscode-test"
-  ]
+    "noPropertyAccessFromIndexSignature": false
+  }
 }
