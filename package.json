@@ -90,6 +90,10 @@
         "title": "Open in GitHub: Security"
       },
       {
+        "command": "openInGitHub.openInsights",
+        "title": "Open in GitHub: Insights"
+      },
+      {
         "command": "openInGitHub.openWiki",
         "title": "Open in GitHub: Wiki"
       },
