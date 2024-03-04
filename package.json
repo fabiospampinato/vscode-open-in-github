@@ -78,6 +78,10 @@
         "title": "Open in GitHub: Releases"
       },
       {
+        "command": "openInGitHub.openTags",
+        "title": "Open in GitHub: Tags"
+      },
+      {
         "command": "openInGitHub.openActions",
         "title": "Open in GitHub: Actions"
       },
