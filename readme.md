@@ -54,16 +54,6 @@ It adds 17 commands to the command palette:
 }
 ```
 
-## Demo
-
-### Opening the project
-
-![Project](resources/demo-project.gif)
-
-### Opening the file
-
-![File](resources/demo-file.gif)
-
 ## License
 
 MIT © Fabio Spampinato
