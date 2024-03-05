@@ -1,3 +1,6 @@
+### Version 2.1.1
+- Readme: deleted demos, for simplicity
+
 ### Version 2.1.0
 - New setting: `github.protocol`
 
