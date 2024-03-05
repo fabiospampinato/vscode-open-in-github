@@ -1,3 +1,6 @@
+### Version 2.1.0
+- New setting: `github.protocol`
+
 ### Version 2.0.0
 - Rewitten: more modern code, no third-party dependencies, 99% smaller bundle
 - New command: "Open in GitHub: Security"
