@@ -44,6 +44,7 @@ It adds 17 commands to the command palette:
 
 ```js
 {
+  "openInGitHub.github.protocol": "https", // Custom URL protocol
   "openInGitHub.github.domain": "github.com", // Custom GitHub domain
   "openInGitHub.remote.name": "origin", // Name of the remote repository
   "openInGitHub.remote.branch": "master", // Name of the remote branch

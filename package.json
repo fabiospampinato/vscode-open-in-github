@@ -12,6 +12,11 @@
       "type": "object",
       "title": "Open in GitHub - Configuration",
       "properties": {
+        "openInGitHub.github.protocol": {
+          "type": "string",
+          "description": "Custom URL protocol",
+          "default": "https"
+        },
         "openInGitHub.github.domain": {
           "type": "string",
           "description": "Custom GitHub domain",

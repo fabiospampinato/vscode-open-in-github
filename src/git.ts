@@ -65,6 +65,7 @@ const Git = {
   getRemoteUrl: async ( cwd: string ): Promise<string | undefined> => {
 
     const config = getConfig ( 'openInGitHub' );
+    const protocol = config?.github?.protocol || 'https';
     const domain = config?.github?.domain || 'github.com';
     const origin = config?.remote?.name || 'origin';
 
@@ -84,7 +85,7 @@ const Git = {
 
     if ( !match ) return;
 
-    return `https://${domain}/${match[1]}/${match[2]}`;
+    return `${protocol}://${domain}/${match[1]}/${match[2]}`;
 
   }
 
