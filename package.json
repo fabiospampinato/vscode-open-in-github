@@ -146,7 +146,7 @@
     "github"
   ],
   "dependencies": {
-    "vscode-extras": "^1.0.1"
+    "vscode-extras": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.19.21",

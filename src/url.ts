@@ -2,7 +2,7 @@
 /* IMPORT */
 
 import vscode from 'vscode';
-import {getConfig, getProjectRootPath} from 'vscode-extras';
+import {getActiveFilePath, getConfig, getProjectRootPath} from 'vscode-extras';
 import {NO_REPOSITORY, NO_REMOTE, NO_FILE} from './constants';
 import Git from './git';
 
@@ -29,11 +29,9 @@ const URL = {
 
     if ( file ) {
 
-      const {activeTextEditor} = vscode.window;
+      const editorPath = getActiveFilePath ();
 
-      if ( !activeTextEditor ) return NO_FILE;
-
-      const editorPath = activeTextEditor.document.uri.fsPath;
+      if ( !editorPath ) return NO_FILE;
 
       filePath = editorPath.substring ( repoPath.length + 1 ).replace( /\\/g, '/' ) || '';
 
@@ -45,9 +43,9 @@ const URL = {
 
         if ( config?.useLocalRange ) {
 
-          const selections = activeTextEditor.selections;
+          const selections = vscode.window.activeTextEditor?.selections;
 
-          if ( selections.length === 1 ) {
+          if ( selections?.length === 1 ) {
 
             const selection = selections[0];
 
