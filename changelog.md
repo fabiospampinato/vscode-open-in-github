@@ -1,3 +1,6 @@
+### Version 2.1.2
+- Updated some dependencies
+
 ### Version 2.1.1
 - Readme: deleted demos, for simplicity
 
