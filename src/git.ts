@@ -79,7 +79,7 @@ const Git = {
 
     if ( !remote ) return;
 
-    const ref = remote.refs.fetch || remote.refs.push
+    const ref = remote.refs.fetch || remote.refs.push;
 
     if ( !ref ) return;
 
