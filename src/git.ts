@@ -68,14 +68,12 @@ const Git = {
   getRemoteUrl: async ( cwd: string ): Promise<string | undefined> => {
 
     const options = getOptions ();
-    const protocol = options.github.protocol;
-    const domain = options.github.domain;
     const origin = options.remote.name;
 
     const remotes = await Git.getRemotes ( cwd );
-    const remotesGithub = remotes.filter ( remote => remote.refs.fetch?.includes ( domain ) || remote.refs.push?.includes ( domain ) );
-    const remoteOrigin = remotesGithub.filter ( remote => remote.name === origin )[0];
-    const remote = remoteOrigin || remotesGithub[0];
+    const remotesValid = remotes.filter ( remote => remote.refs.fetch || remote.refs.push );
+    const remoteOrigin = remotesValid.find ( remote => remote.name === origin );
+    const remote = remoteOrigin || remotesValid[0];
 
     if ( !remote ) return;
 
@@ -83,12 +81,17 @@ const Git = {
 
     if ( !ref ) return;
 
-    const re = /\.[^.:/]+[:/]([^/]+)\/(.*?)(?:\.git|\/)?$/;
+    const re = /(\w+\.\w+)[:/]([^/]+)\/(.*?)(?:\.git|\/)?$/;
     const match = re.exec ( ref );
 
     if ( !match ) return;
 
-    return `${protocol}://${domain}/${match[1]}/${match[2]}`;
+    const protocol = options.github.protocol;
+    const domain = options.useLocalDomain ? match[1] : options.github.domain;
+    const username = match[2];
+    const reponame = match[3];
+
+    return `${protocol}://${domain}/${username}/${reponame}`;
 
   }
 

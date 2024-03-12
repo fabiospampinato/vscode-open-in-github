@@ -32,6 +32,11 @@
           "description": "Name of the remote branch",
           "default": "master"
         },
+        "openInGitHub.useLocalDomain": {
+          "type": "boolean",
+          "description": "Use the local domain instead of the fixed github domain",
+          "default": true
+        },
         "openInGitHub.useLocalBranch": {
           "type": "boolean",
           "description": "Use the local branch instead of the fixed remote branch",

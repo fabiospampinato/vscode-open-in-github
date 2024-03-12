@@ -48,6 +48,7 @@ It adds 17 commands to the command palette:
   "openInGitHub.github.domain": "github.com", // Custom GitHub domain
   "openInGitHub.remote.name": "origin", // Name of the remote repository
   "openInGitHub.remote.branch": "master", // Name of the remote branch
+  "openInGitHub.useLocalDomain": true, // Use the local domain instead of the fixed github domain
   "openInGitHub.useLocalBranch": true, // Use the local branch instead of the fixed remote branch
   "openInGitHub.useLocalRange": true, // Highlight the local selection range, if there's one
   "openInGitHub.useLocalLine": false // Highlight the local line if there's no selection range

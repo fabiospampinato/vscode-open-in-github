@@ -10,6 +10,7 @@ type Options = {
     name: string,
     branch: string
   },
+  useLocalDomain: boolean,
   useLocalBranch: boolean,
   useLocalRange: boolean,
   useLocalLine: boolean
