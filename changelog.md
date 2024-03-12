@@ -1,3 +1,7 @@
+### Version 2.2.0
+- Calculating the relative path of a file more reliably
+- New setting: "openInGitHub.useLocalDomain", for inferring the remote domain automatically
+
 ### Version 2.1.3
 - Minor internal improvements
 
