@@ -1,6 +1,7 @@
 
 /* IMPORT */
 
+import path from 'node:path';
 import vscode from 'vscode';
 import {alert, getActiveFilePath, getGitRootPath, openInExternal} from 'vscode-extras';
 import {ERROR_NO_REPOSITORY, ERROR_NO_REMOTE, ERROR_NO_FILE} from './constants';
@@ -34,7 +35,7 @@ const URL = {
 
       if ( !editorPath ) return ERROR_NO_FILE;
 
-      filePath = editorPath.substring ( rootPath.length + 1 ).replace( /\\/g, '/' ) || '';
+      filePath = path.relative ( rootPath, editorPath ).replace( /\\+/g, '/' );
 
       if ( filePath ) {
 
