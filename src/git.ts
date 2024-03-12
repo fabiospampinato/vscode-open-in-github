@@ -1,9 +1,8 @@
 
 /* IMPORT */
 
-import {execFileSync} from 'node:child_process';
-import {getConfig} from 'vscode-extras';
-import type {ExecFileOptionsWithBufferEncoding} from 'node:child_process';
+import {exec} from 'vscode-extras';
+import {getOptions} from './utils';
 import type {Remote} from './types';
 
 /* MAIN */
@@ -12,32 +11,36 @@ const Git = {
 
   /* API */
 
-  exec: ( args: string[], options: Partial<ExecFileOptionsWithBufferEncoding> ): string => {
+  exec: async ( cwd: string, args: string[] ): Promise<string> => {
 
-    return execFileSync ( 'git', args, { stdio: 'pipe', ...options } ).toString ().trim ();
+    const {stdout} = await exec ( 'git', args, { cwd, stdio: 'pipe' } );
+    const output = stdout.toString ().trim ();
+
+    return output;
 
   },
 
   getBranch: async ( cwd: string ): Promise<string> => {
 
-    const config = getConfig ( 'openInGitHub' );
+    const options = getOptions ();
 
-    if ( !config?.useLocalBranch ) return config?.remote?.branch || 'master';
+    if ( !options.useLocalBranch ) return options.remote.branch;
 
-    return Git.exec ( ['branch', '--show-current'], { cwd } );
+    return Git.exec ( cwd, ['branch', '--show-current'] );
 
   },
 
   getCommit: async ( cwd: string ): Promise<string> => {
 
-    return Git.exec ( ['rev-parse', 'HEAD'], { cwd } );
+    return Git.exec ( cwd, ['rev-parse', 'HEAD'] );
 
   },
 
   getRemotes: async ( cwd: string ): Promise<Remote[]> => {
 
     const remoteRe = /^(\S+)\s+(\S+)(?:\s+\((push|fetch)\))?$/;
-    const remotesLines = Git.exec ( ['remote', '-v'], { cwd } ).split ( /\r?\n|\r/g );
+    const remotesLinesRaw = await Git.exec ( cwd, ['remote', '-v'] );
+    const remotesLines = remotesLinesRaw.split ( /\r?\n|\r/g );
     const remotesMap: Record<string, Remote> = {};
 
     for ( const line of remotesLines ) {
@@ -64,10 +67,10 @@ const Git = {
 
   getRemoteUrl: async ( cwd: string ): Promise<string | undefined> => {
 
-    const config = getConfig ( 'openInGitHub' );
-    const protocol = config?.github?.protocol || 'https';
-    const domain = config?.github?.domain || 'github.com';
-    const origin = config?.remote?.name || 'origin';
+    const options = getOptions ();
+    const protocol = options.github.protocol;
+    const domain = options.github.domain;
+    const origin = options.remote.name;
 
     const remotes = await Git.getRemotes ( cwd );
     const remotesGithub = remotes.filter ( remote => remote.refs.fetch?.includes ( domain ) || remote.refs.push?.includes ( domain ) );

@@ -1,6 +1,20 @@
 
 /* MAIN */
 
+type Options = {
+  github: {
+    protocol: string,
+    domain: string
+  },
+  remote: {
+    name: string,
+    branch: string
+  },
+  useLocalBranch: boolean,
+  useLocalRange: boolean,
+  useLocalLine: boolean
+};
+
 type Remote = {
   name: string;
   refs: {
@@ -11,4 +25,4 @@ type Remote = {
 
 /* EXPORT */
 
-export type {Remote};
+export type {Options, Remote};

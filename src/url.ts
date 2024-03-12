@@ -2,8 +2,9 @@
 /* IMPORT */
 
 import vscode from 'vscode';
-import {getActiveFilePath, getConfig, getProjectRootPath} from 'vscode-extras';
-import {NO_REPOSITORY, NO_REMOTE, NO_FILE} from './constants';
+import {alert, getActiveFilePath, getGitRootPath, openInExternal} from 'vscode-extras';
+import {ERROR_NO_REPOSITORY, ERROR_NO_REMOTE, ERROR_NO_FILE} from './constants';
+import {getOptions} from './utils';
 import Git from './git';
 
 /* MAIN */
@@ -14,13 +15,13 @@ const URL = {
 
   get: async ( file: boolean = false, permalink: boolean = false, page?: string ): Promise<string | 1 | 2 | 3> => {
 
-    const repoPath = await getProjectRootPath ();
+    const rootPath = await getGitRootPath ();
 
-    if ( !repoPath ) return NO_REPOSITORY;
+    if ( !rootPath ) return ERROR_NO_REPOSITORY;
 
-    const repoUrl = await Git.getRemoteUrl ( repoPath );
+    const repoUrl = await Git.getRemoteUrl ( rootPath );
 
-    if ( !repoUrl ) return NO_REMOTE;
+    if ( !repoUrl ) return ERROR_NO_REMOTE;
 
     let branch = '';
     let commit = '';
@@ -31,17 +32,17 @@ const URL = {
 
       const editorPath = getActiveFilePath ();
 
-      if ( !editorPath ) return NO_FILE;
+      if ( !editorPath ) return ERROR_NO_FILE;
 
-      filePath = editorPath.substring ( repoPath.length + 1 ).replace( /\\/g, '/' ) || '';
+      filePath = editorPath.substring ( rootPath.length + 1 ).replace( /\\/g, '/' ) || '';
 
       if ( filePath ) {
 
-        branch = await Git.getBranch ( repoPath );
+        branch = await Git.getBranch ( rootPath );
 
-        const config = getConfig ( 'openInGitHub' );
+        const options = getOptions ();
 
-        if ( config?.useLocalRange ) {
+        if ( options.useLocalRange ) {
 
           const selections = vscode.window.activeTextEditor?.selections;
 
@@ -61,7 +62,7 @@ const URL = {
 
               }
 
-            } else if ( config?.useLocalLine ) {
+            } else if ( options.useLocalLine ) {
 
               lines = `#L${selection.start.line + 1}`;
 
@@ -74,7 +75,7 @@ const URL = {
         if ( permalink ) {
 
           branch = '';
-          commit = await Git.getCommit ( repoPath );
+          commit = await Git.getCommit ( rootPath );
 
         }
 
@@ -95,12 +96,13 @@ const URL = {
 
     const url = await URL.get ( file, permalink, page );
 
-    if ( url === NO_REPOSITORY ) return void vscode.window.showErrorMessage ( 'You have to open a git project before being able to open it in GitHub' );
-    if ( url === NO_REMOTE ) return void vscode.window.showErrorMessage ( 'Remote repository not found' );
-    if ( url === NO_FILE ) return void vscode.window.showErrorMessage ( 'You have to open a repository file before being able to open it in GitHub' );
+    if ( url === ERROR_NO_REPOSITORY ) return alert.error ( 'You have to open a git project before being able to open it in GitHub' );
+    if ( url === ERROR_NO_REMOTE ) return alert.error ( 'Remote repository not found' );
+    if ( url === ERROR_NO_FILE ) return alert.error ( 'You have to open a repository file before being able to open it in GitHub' );
 
     vscode.env.clipboard.writeText ( url );
-    vscode.window.showInformationMessage ( 'Link copied to clipboard!' );
+
+    alert.info ( 'Link copied to clipboard!' );
 
   },
 
@@ -108,11 +110,11 @@ const URL = {
 
     const url = await URL.get ( file, permalink, page );
 
-    if ( url === NO_REPOSITORY ) return void vscode.window.showErrorMessage ( 'You have to open a git project before being able to open it in GitHub' );
-    if ( url === NO_REMOTE ) return void vscode.window.showErrorMessage ( 'Remote repository not found' );
-    if ( url === NO_FILE ) return void vscode.window.showErrorMessage ( 'You have to open a repository file before being able to open it in GitHub' );
+    if ( url === ERROR_NO_REPOSITORY ) return alert.error ( 'You have to open a git project before being able to open it in GitHub' );
+    if ( url === ERROR_NO_REMOTE ) return alert.error ( 'Remote repository not found' );
+    if ( url === ERROR_NO_FILE ) return alert.error ( 'You have to open a repository file before being able to open it in GitHub' );
 
-    vscode.env.openExternal ( vscode.Uri.parse ( url ) );
+    openInExternal ( url );
 
   }
 
