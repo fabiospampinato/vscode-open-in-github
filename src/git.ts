@@ -81,7 +81,7 @@ const Git = {
 
     if ( !ref ) return;
 
-    const re = /(\w+\.\w+)[:/]([^/]+)\/(.*?)(?:\.git|\/)?$/;
+    const re = /(\w+(?:\.\w+)+)[:/]([^/]+)\/(.*?)(?:\.git|\/)?$/;
     const match = re.exec ( ref );
 
     if ( !match ) return;
