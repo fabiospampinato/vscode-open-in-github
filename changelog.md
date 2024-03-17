@@ -1,3 +1,6 @@
+### Version 2.2.1
+- Fixed an issue with the detection of remote urls using subdomain
+
 ### Version 2.2.0
 - Calculating the relative path of a file more reliably
 - New setting: "openInGitHub.useLocalDomain", for inferring the remote domain automatically
