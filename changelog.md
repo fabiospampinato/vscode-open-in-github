@@ -1,3 +1,7 @@
+### Version 2.3.0
+- New command: "Open in GitHub: Repository", just a convenience alias
+- New command: "Open in GitHub: Commits"
+
 ### Version 2.2.1
 - Fixed an issue with the detection of remote urls using subdomain
 
