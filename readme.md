@@ -18,7 +18,7 @@ ext install fabiospampinato.vscode-open-in-github
 
 ## Usage
 
-It adds 18 commands to the command palette:
+It adds 19 commands to the command palette:
 
 ```js
 'Open in GitHub: Project' // Open the current project in GitHub
@@ -32,6 +32,7 @@ It adds 18 commands to the command palette:
 'Open in GitHub: Releases' // Open the current project's releases in GitHub
 'Open in GitHub: Tags' // Open the current project's tags in GitHub
 'Open in GitHub: Actions' // Open the current project's actions in GitHub
+'Open in GitHub: Commits' // Open the current project's commits in GitHub
 'Open in GitHub: Projects' // Open the current project's projects in GitHub
 'Open in GitHub: Security' // Open the current project's security in GitHub
 'Open in GitHub: Insights' // Open the current project's insights in GitHub

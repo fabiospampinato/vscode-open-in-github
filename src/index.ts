@@ -19,6 +19,7 @@ const activate = (): void => {
   vscode.commands.registerCommand ( 'openInGitHub.openReleases', Commands.openReleases );
   vscode.commands.registerCommand ( 'openInGitHub.openTags', Commands.openTags );
   vscode.commands.registerCommand ( 'openInGitHub.openActions', Commands.openActions );
+  vscode.commands.registerCommand ( 'openInGitHub.openCommits', Commands.openCommits );
   vscode.commands.registerCommand ( 'openInGitHub.openProjects', Commands.openProjects );
   vscode.commands.registerCommand ( 'openInGitHub.openSecurity', Commands.openSecurity );
   vscode.commands.registerCommand ( 'openInGitHub.openInsights', Commands.openInsights );
