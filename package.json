@@ -60,6 +60,10 @@
         "title": "Open in GitHub: Project"
       },
       {
+        "command": "openInGitHub.openRepository",
+        "title": "Open in GitHub: Repository"
+      },
+      {
         "command": "openInGitHub.openFile",
         "title": "Open in GitHub: File"
       },

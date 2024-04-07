@@ -9,6 +9,7 @@ import * as Commands from './commands';
 const activate = (): void => {
 
   vscode.commands.registerCommand ( 'openInGitHub.openProject', Commands.openProject );
+  vscode.commands.registerCommand ( 'openInGitHub.openRepository', Commands.openProject );
   vscode.commands.registerCommand ( 'openInGitHub.openFile', Commands.openFile );
   vscode.commands.registerCommand ( 'openInGitHub.openFileHistory', Commands.openFileHistory );
   vscode.commands.registerCommand ( 'openInGitHub.openFileBlame', Commands.openFileBlame );
