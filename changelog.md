@@ -1,3 +1,6 @@
+### Version 2.3.1
+- Made parsing a remote git url a bit more permissive
+
 ### Version 2.3.0
 - New command: "Open in GitHub: Repository", just a convenience alias
 - New command: "Open in GitHub: Commits"
