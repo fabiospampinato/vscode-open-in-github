@@ -80,6 +80,10 @@
         "title": "Open in GitHub: File Permalink"
       },
       {
+        "command": "openInGitHub.openDiscussions",
+        "title": "Open in GitHub: Discussions"
+      },
+      {
         "command": "openInGitHub.openIssues",
         "title": "Open in GitHub: Issues"
       },

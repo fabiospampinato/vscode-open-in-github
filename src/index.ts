@@ -13,6 +13,7 @@ const activate = (): void => {
   vscode.commands.registerCommand ( 'openInGitHub.openFile', Commands.openFile );
   vscode.commands.registerCommand ( 'openInGitHub.openFileHistory', Commands.openFileHistory );
   vscode.commands.registerCommand ( 'openInGitHub.openFileBlame', Commands.openFileBlame );
+  vscode.commands.registerCommand ( 'openInGitHub.openDiscussions', Commands.openDiscussions );
   vscode.commands.registerCommand ( 'openInGitHub.openFilePermalink', Commands.openFilePermalink );
   vscode.commands.registerCommand ( 'openInGitHub.openIssues', Commands.openIssues );
   vscode.commands.registerCommand ( 'openInGitHub.openPullRequests', Commands.openPullRequests );

@@ -95,6 +95,12 @@ const openFileBlame = (): Promise<void> => {
 
 };
 
+const openDiscussions = (): Promise<void> => {
+
+  return URL.open ( false, false, 'discussions' );
+
+};
+
 const openFilePermalink = (): Promise<void> => {
 
   return URL.open ( true, true, 'blob' );
@@ -113,6 +119,7 @@ const copyFilePermalink = (): Promise<void> => {
 
 };
 
+
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openCommits, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFileLink, copyFilePermalink};
+export {openProject, openIssues, openPullRequests, openActions, openCommits, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openDiscussions, openFilePermalink, copyFileLink, copyFilePermalink};
