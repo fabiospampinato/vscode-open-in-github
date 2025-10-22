@@ -139,7 +139,7 @@
     "clean": "tsex clean",
     "compile": "tsex compile",
     "debug": "code --extensionDevelopmentPath $PWD --inspect-extensions 9222",
-    "package": "vsce package",
+    "package": "vsce package --no-dependencies",
     "prepublishOnly": "scex -bs clean bundle:prod",
     "vscode:prepublish": "scex -bs clean bundle:prod",
     "dev": "scex -bs bundle:dev debug",
