@@ -35,6 +35,12 @@ const openCommits = (): Promise<void> => {
 
 };
 
+const openDiscussions = (): Promise<void> => {
+
+  return URL.open ( false, false, 'discussions' );
+
+};
+
 const openProjects = (): Promise<void> => {
 
   return URL.open ( false, false, 'projects' );
@@ -115,4 +121,4 @@ const copyFilePermalink = (): Promise<void> => {
 
 /* EXPORT */
 
-export {openProject, openIssues, openPullRequests, openActions, openCommits, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFileLink, copyFilePermalink};
+export {openProject, openIssues, openPullRequests, openActions, openCommits, openDiscussions, openProjects, openSecurity, openInsights, openWiki, openSettings, openReleases, openTags, openFile, openFileHistory, openFileBlame, openFilePermalink, copyFileLink, copyFilePermalink};

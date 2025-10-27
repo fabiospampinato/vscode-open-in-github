@@ -104,6 +104,10 @@
         "title": "Open in GitHub: Commits"
       },
       {
+        "command": "openInGitHub.openDiscussions",
+        "title": "Open in GitHub: Discussions"
+      },
+      {
         "command": "openInGitHub.openProjects",
         "title": "Open in GitHub: Projects"
       },
