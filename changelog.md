@@ -1,3 +1,8 @@
+### Version 2.4.0
+- New command: "Open in GitHub: Discussions" (#36)
+- Fixed support for domain names containing hyphens (#38)
+- Removed unnecessary slash from generated links containing a fragment (#34)
+
 ### Version 2.3.1
 - Made parsing a remote git url a bit more permissive
 
