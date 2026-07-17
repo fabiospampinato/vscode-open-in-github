@@ -47,7 +47,7 @@
 ### Version 1.2.4
 - Update .github/FUNDING.yml
 - Deleted repo-level github funding.yml
-- Ensuring custom domans are handled properly
+- Ensuring custom domains are handled properly
 
 ### Version 1.2.3
 - Fixed remote support
